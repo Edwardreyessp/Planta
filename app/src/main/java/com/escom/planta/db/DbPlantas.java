@@ -7,15 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-import com.escom.planta.entidades.Contactos;
+import com.escom.planta.entidades.Plantas;
 
 import java.util.ArrayList;
 
-public class DbContactos extends DbHelper {
+public class DbPlantas extends DbHelper {
 
     Context context;
 
-    public DbContactos(@Nullable Context context) {
+    public DbPlantas(@Nullable Context context) {
         super(context);
         this.context = context;
     }
@@ -41,20 +41,20 @@ public class DbContactos extends DbHelper {
         return id;
     }
 
-    public ArrayList<Contactos> mostrarContactos() {
+    public ArrayList<Plantas> mostrarContactos() {
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        ArrayList<Contactos> listaContactos = new ArrayList<>();
-        Contactos contacto;
+        ArrayList<Plantas> listaContactos = new ArrayList<>();
+        Plantas contacto;
         Cursor cursorContactos;
 
         cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS, null);
 
         if (cursorContactos.moveToFirst()) {
             do {
-                contacto = new Contactos();
+                contacto = new Plantas();
                 contacto.setId(cursorContactos.getInt(0));
                 contacto.setNombre(cursorContactos.getString(1));
                 contacto.setTelefono(cursorContactos.getString(2));
@@ -68,18 +68,18 @@ public class DbContactos extends DbHelper {
         return listaContactos;
     }
 
-    public Contactos verContacto(int id) {
+    public Plantas verContacto(int id) {
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        Contactos contacto = null;
+        Plantas contacto = null;
         Cursor cursorContactos;
 
         cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS + " WHERE id = " + id + " LIMIT 1", null);
 
         if (cursorContactos.moveToFirst()) {
-            contacto = new Contactos();
+            contacto = new Plantas();
             contacto.setId(cursorContactos.getInt(0));
             contacto.setNombre(cursorContactos.getString(1));
             contacto.setTelefono(cursorContactos.getString(2));

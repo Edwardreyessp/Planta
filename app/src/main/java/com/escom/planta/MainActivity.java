@@ -10,9 +10,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.escom.planta.adaptadores.ListaContactosAdapter;
-import com.escom.planta.db.DbContactos;
-import com.escom.planta.entidades.Contactos;
+import com.escom.planta.adaptadores.ListaPlantasAdapter;
+import com.escom.planta.db.DbPlantas;
+import com.escom.planta.entidades.Plantas;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ import escom.planta.R;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView listaContactos;
-    ArrayList<Contactos> listaArrayContactos;
+    ArrayList<Plantas> listaArrayContactos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         listaContactos = findViewById(R.id.listaContactos);
         listaContactos.setLayoutManager(new LinearLayoutManager(this));
 
-        DbContactos dbContactos = new DbContactos(MainActivity.this);
+        DbPlantas dbPlantas = new DbPlantas(MainActivity.this);
 
         listaArrayContactos = new ArrayList<>();
 
-        ListaContactosAdapter adapter = new ListaContactosAdapter(dbContactos.mostrarContactos());
+        ListaPlantasAdapter adapter = new ListaPlantasAdapter(dbPlantas.mostrarContactos());
         listaContactos.setAdapter(adapter);
     }
 

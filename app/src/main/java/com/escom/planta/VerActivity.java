@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.escom.planta.db.DbContactos;
-import com.escom.planta.entidades.Contactos;
+import com.escom.planta.db.DbPlantas;
+import com.escom.planta.entidades.Plantas;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import escom.planta.R;
@@ -23,7 +23,7 @@ public class VerActivity extends AppCompatActivity {
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
 
-    Contactos contacto;
+    Plantas contacto;
     int id = 0;
 
     @Override
@@ -49,8 +49,8 @@ public class VerActivity extends AppCompatActivity {
             id = (int) savedInstanceState.getSerializable("ID");
         }
 
-        final DbContactos dbContactos = new DbContactos(VerActivity.this);
-        contacto = dbContactos.verContacto(id);
+        final DbPlantas dbPlantas = new DbPlantas(VerActivity.this);
+        contacto = dbPlantas.verContacto(id);
 
         if(contacto != null){
             txtNombre.setText(contacto.getNombre());
@@ -80,7 +80,7 @@ public class VerActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if(dbContactos.eliminarContacto(id)){
+                                if(dbPlantas.eliminarContacto(id)){
                                     lista();
                                 }
                             }

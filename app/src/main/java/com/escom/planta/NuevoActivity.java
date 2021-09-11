@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.escom.planta.db.DbContactos;
+import com.escom.planta.db.DbPlantas;
 
 import escom.planta.R;
 
@@ -33,8 +33,8 @@ public class NuevoActivity extends AppCompatActivity {
 
                 if(!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
 
-                    DbContactos dbContactos = new DbContactos(NuevoActivity.this);
-                    long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
+                    DbPlantas dbPlantas = new DbPlantas(NuevoActivity.this);
+                    long id = dbPlantas.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
 
                     if (id > 0) {
                         Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();

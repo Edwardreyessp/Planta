@@ -10,31 +10,30 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/*import com.escom.planta.R;*/
 import com.escom.planta.VerActivity;
-import com.escom.planta.entidades.Contactos;
+import com.escom.planta.entidades.Plantas;
 
 import java.util.ArrayList;
 
 import escom.planta.R;
 
-public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> {
+public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapter.PlantaViewHolder> {
 
-    ArrayList<Contactos> listaContactos;
+    ArrayList<Plantas> listaContactos;
 
-    public ListaContactosAdapter(ArrayList<Contactos> listaContactos){
+    public ListaPlantasAdapter(ArrayList<Plantas> listaContactos){
         this.listaContactos = listaContactos;
     }
 
     @NonNull
     @Override
-    public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_item_contacto, null, false);
-        return new ContactoViewHolder(view);
+    public PlantaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_item_planta, null, false);
+        return new PlantaViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlantaViewHolder holder, int position) {
         holder.viewNombre.setText(listaContactos.get(position).getNombre());
         holder.viewTelefono.setText(listaContactos.get(position).getTelefono());
         holder.viewCorreo.setText(listaContactos.get(position).getCorreo_electornico());
@@ -45,11 +44,11 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
         return listaContactos.size();
     }
 
-    public class ContactoViewHolder extends RecyclerView.ViewHolder {
+    public class PlantaViewHolder extends RecyclerView.ViewHolder {
 
         TextView viewNombre, viewTelefono, viewCorreo;
 
-        public ContactoViewHolder(@NonNull View itemView) {
+        public PlantaViewHolder(@NonNull View itemView) {
             super(itemView);
 
             viewNombre = itemView.findViewById(R.id.viewNombre);

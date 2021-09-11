@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NuevoActivity">
+    tools:context="com.escom.planta.NuevoActivity">
 
     <EditText
         android:id="@+id/txtNombre"
@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/hint_telefono"
-        android:inputType="phone"
+        android:hint="@string/hint_dias_riego"
+        android:inputType="number"
         android:textSize="24sp" />
 
     <EditText
@@ -29,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/hint_correo_electronico"
-        android:inputType="textEmailAddress"
+        android:hint="@string/hint_tamano"
+        android:inputType="text"
         android:textSize="24sp" />
 
     <Button

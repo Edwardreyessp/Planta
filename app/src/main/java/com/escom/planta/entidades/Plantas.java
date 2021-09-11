@@ -1,6 +1,6 @@
 package com.escom.planta.entidades;
 
-public class Contactos {
+public class Plantas {
 
     private int id;
     private String nombre;
