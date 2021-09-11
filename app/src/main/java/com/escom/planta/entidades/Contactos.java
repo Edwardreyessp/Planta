@@ -1,4 +1,4 @@
-package com.cdp.agenda.entidades;
+package com.escom.planta.entidades;
 
 public class Contactos {
 

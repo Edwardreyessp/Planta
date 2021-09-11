@@ -1,4 +1,4 @@
-package com.cdp.agenda.db;
+package com.escom.planta.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NOMBRE = "agenda.db";
+    private static final String DATABASE_NOMBRE = "planta.db";
     public static final String TABLE_CONTACTOS = "t_contactos";
 
     public DbHelper(@Nullable Context context) {

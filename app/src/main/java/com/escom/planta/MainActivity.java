@@ -1,25 +1,22 @@
-package com.cdp.agenda;
+package com.escom.planta;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
-import com.cdp.agenda.adaptadores.ListaContactosAdapter;
-import com.cdp.agenda.db.DbContactos;
-import com.cdp.agenda.db.DbHelper;
-import com.cdp.agenda.entidades.Contactos;
+import com.escom.planta.adaptadores.ListaContactosAdapter;
+import com.escom.planta.db.DbContactos;
+import com.escom.planta.entidades.Contactos;
 
 import java.util.ArrayList;
+
+import escom.planta.R;
 
 public class MainActivity extends AppCompatActivity {
 

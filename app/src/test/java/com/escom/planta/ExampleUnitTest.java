@@ -1,4 +1,4 @@
-package com.cdp.agenda;
+package com.escom.planta;
 
 import org.junit.Test;
 

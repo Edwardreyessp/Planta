@@ -1,4 +1,4 @@
-package com.cdp.agenda.adaptadores;
+package com.escom.planta.adaptadores;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,11 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cdp.agenda.R;
-import com.cdp.agenda.VerActivity;
-import com.cdp.agenda.entidades.Contactos;
+/*import com.escom.planta.R;*/
+import com.escom.planta.VerActivity;
+import com.escom.planta.entidades.Contactos;
 
 import java.util.ArrayList;
+
+import escom.planta.R;
 
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> {
 

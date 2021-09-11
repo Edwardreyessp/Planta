@@ -1,4 +1,4 @@
-package com.cdp.agenda.db;
+package com.escom.planta.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-import com.cdp.agenda.entidades.Contactos;
+import com.escom.planta.entidades.Contactos;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cdp.agenda">
+    package="escom.planta">
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,13 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".NuevoActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.escom.planta.NuevoActivity"
+            android:parentActivityName="com.escom.planta.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.escom.planta.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.escom.planta.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,21 +26,21 @@
         </activity>
 
         <activity
-            android:name=".VerActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.escom.planta.VerActivity"
+            android:parentActivityName="com.escom.planta.MainActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.escom.planta.MainActivity" />
         </activity>
 
         <activity
-            android:name=".EditarActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.escom.planta.EditarActivity"
+            android:parentActivityName="com.escom.planta.MainActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.escom.planta.MainActivity" />
         </activity>
     </application>
 

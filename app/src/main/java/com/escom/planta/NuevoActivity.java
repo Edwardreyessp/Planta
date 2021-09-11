@@ -1,4 +1,4 @@
-package com.cdp.agenda;
+package com.escom.planta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cdp.agenda.db.DbContactos;
+import com.escom.planta.db.DbContactos;
+
+import escom.planta.R;
 
 public class NuevoActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.cdp.agenda;
+package com.escom.planta;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.cdp.agenda", appContext.getPackageName());
+        assertEquals("com.escom.planta", appContext.getPackageName());
     }
 }

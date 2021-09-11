@@ -1,9 +1,8 @@
-package com.cdp.agenda;
+package com.escom.planta;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cdp.agenda.db.DbContactos;
-import com.cdp.agenda.entidades.Contactos;
+import com.escom.planta.db.DbContactos;
+import com.escom.planta.entidades.Contactos;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import escom.planta.R;
 
 public class EditarActivity extends AppCompatActivity {
 
