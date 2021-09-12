@@ -19,7 +19,7 @@ import escom.planta.R;
 
 public class VerActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtRiego, txtTamano;
+    EditText txtNombre, txtRiego, txtTamano, txtImagen;
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
 
@@ -34,6 +34,7 @@ public class VerActivity extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombre);
         txtRiego = findViewById(R.id.txtDiasRiego);
         txtTamano = findViewById(R.id.txtTamano);
+        txtImagen = findViewById(R.id.txtImagen);
         btnGuarda = findViewById(R.id.btnGuarda);
         fabEditar = findViewById(R.id.fabEditar);
         fabEliminar = findViewById(R.id.fabEliminar);
@@ -56,10 +57,12 @@ public class VerActivity extends AppCompatActivity {
             txtNombre.setText(planta.getNombre());
             txtRiego.setText(planta.getDias_riego());
             txtTamano.setText(planta.getTamano());
+            txtImagen.setText(planta.getImagen());
             btnGuarda.setVisibility(View.INVISIBLE);
             txtNombre.setInputType(InputType.TYPE_NULL);
             txtRiego.setInputType(InputType.TYPE_NULL);
             txtTamano.setInputType(InputType.TYPE_NULL);
+            txtImagen.setInputType(InputType.TYPE_NULL);
         }
 
         fabEditar.setOnClickListener(new View.OnClickListener() {

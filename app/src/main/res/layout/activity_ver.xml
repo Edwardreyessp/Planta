@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:labelFor="@+id/viewTelefono"
+        android:labelFor="@+id/viewRiego"
         android:inputType="number"
         android:textSize="24sp" />
 
@@ -48,7 +48,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:labelFor="@+id/viewCorreo"
+        android:labelFor="@+id/viewTamano"
+        android:inputType="text"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/viewImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_imagen" />
+
+    <EditText
+        android:id="@+id/txtImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:labelFor="@+id/viewImagen"
         android:inputType="text"
         android:textSize="24sp" />
 

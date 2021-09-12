@@ -20,7 +20,7 @@ public class DbPlantas extends DbHelper {
         this.context = context;
     }
 
-    public long insertarPlanta(String nombre, String dias_riego, String tamano) {
+    public long insertarPlanta(String nombre, String dias_riego, String tamano, String imagen) {
 
         long id = 0;
 
@@ -32,6 +32,7 @@ public class DbPlantas extends DbHelper {
             values.put("nombre", nombre);
             values.put("dias_riego", dias_riego);
             values.put("tamano", tamano);
+            values.put("imagen", imagen);
 
             id = db.insert(TABLE_PLANTAS, null, values);
         } catch (Exception ex) {
@@ -84,6 +85,7 @@ public class DbPlantas extends DbHelper {
             planta.setNombre(cursorPlantas.getString(1));
             planta.setDias_riego(cursorPlantas.getString(2));
             planta.setTamano(cursorPlantas.getString(3));
+            planta.setImagen(cursorPlantas.getString(4));
         }
 
         cursorPlantas.close();
@@ -91,7 +93,7 @@ public class DbPlantas extends DbHelper {
         return planta;
     }
 
-    public boolean editarPlanta(int id, String nombre, String dias_riego, String tamano) {
+    public boolean editarPlanta(int id, String nombre, String dias_riego, String tamano, String imagen) {
 
         boolean correcto = false;
 
@@ -99,7 +101,7 @@ public class DbPlantas extends DbHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + TABLE_PLANTAS + " SET nombre = '" + nombre + "', dias_riego = '" + dias_riego + "', tamano = '" + tamano + "' WHERE id='" + id + "' ");
+            db.execSQL("UPDATE " + TABLE_PLANTAS + " SET nombre = '" + nombre + "', dias_riego = '" + dias_riego + "', tamano = '" + tamano + "', imagen = '" + imagen + "' WHERE id='" + id + "' ");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

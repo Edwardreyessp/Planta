@@ -23,7 +23,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "dias_riego TEXT NOT NULL," +
-                "tamano TEXT)");
+                "tamano TEXT," +
+                "imagen TEXT)");
     }
 
     @Override

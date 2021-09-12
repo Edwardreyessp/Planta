@@ -14,7 +14,7 @@ import escom.planta.R;
 
 public class NuevoActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtDiasRiego, txtTamano;
+    EditText txtNombre, txtDiasRiego, txtTamano, txtImagen;
     Button btnGuarda;
 
     @Override
@@ -25,6 +25,7 @@ public class NuevoActivity extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombre);
         txtDiasRiego = findViewById(R.id.txtDiasRiego);
         txtTamano = findViewById(R.id.txtTamano);
+        txtImagen = findViewById(R.id.txtImagen);
         btnGuarda = findViewById(R.id.btnGuarda);
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +35,7 @@ public class NuevoActivity extends AppCompatActivity {
                 if(!txtNombre.getText().toString().equals("") && !txtDiasRiego.getText().toString().equals("")) {
 
                     DbPlantas dbPlantas = new DbPlantas(NuevoActivity.this);
-                    long id = dbPlantas.insertarPlanta(txtNombre.getText().toString(), txtDiasRiego.getText().toString(), txtTamano.getText().toString());
+                    long id = dbPlantas.insertarPlanta(txtNombre.getText().toString(), txtDiasRiego.getText().toString(), txtTamano.getText().toString(), txtImagen.getText().toString());
 
                     if (id > 0) {
                         Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
@@ -53,5 +54,6 @@ public class NuevoActivity extends AppCompatActivity {
         txtNombre.setText("");
         txtDiasRiego.setText("");
         txtTamano.setText("");
+        txtImagen.setText("");
     }
 }

@@ -18,7 +18,7 @@ import escom.planta.R;
 
 public class EditarActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtRiego, txtTamano;
+    EditText txtNombre, txtRiego, txtTamano, txtImagen;
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
     boolean correcto = false;
@@ -34,6 +34,7 @@ public class EditarActivity extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombre);
         txtRiego = findViewById(R.id.txtDiasRiego);
         txtTamano = findViewById(R.id.txtTamano);
+        txtImagen = findViewById(R.id.txtImagen);
         btnGuarda = findViewById(R.id.btnGuarda);
         fabEditar = findViewById(R.id.fabEditar);
         fabEditar.setVisibility(View.INVISIBLE);
@@ -58,13 +59,14 @@ public class EditarActivity extends AppCompatActivity {
             txtNombre.setText(planta.getNombre());
             txtRiego.setText(planta.getDias_riego());
             txtTamano.setText(planta.getTamano());
+            txtImagen.setText(planta.getImagen());
         }
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!txtNombre.getText().toString().equals("") && !txtRiego.getText().toString().equals("")) {
-                    correcto = dbPlantas.editarPlanta(id, txtNombre.getText().toString(), txtRiego.getText().toString(), txtTamano.getText().toString());
+                    correcto = dbPlantas.editarPlanta(id, txtNombre.getText().toString(), txtRiego.getText().toString(), txtTamano.getText().toString(), txtImagen.getText().toString());
 
                     if(correcto){
                         Toast.makeText(EditarActivity.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();

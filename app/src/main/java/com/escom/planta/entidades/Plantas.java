@@ -6,6 +6,7 @@ public class Plantas {
     private String nombre;
     private String dias_riego;
     private String tamano;
+    private String imagen;
 
     public int getId() {
         return id;
@@ -38,4 +39,10 @@ public class Plantas {
     public void setTamano(String tamano) {
         this.tamano = tamano;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) { this.imagen = imagen; }
 }
