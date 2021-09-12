@@ -22,7 +22,7 @@ public class EditarActivity extends AppCompatActivity {
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
     boolean correcto = false;
-    Plantas contacto;
+    Plantas planta;
     int id = 0;
 
     @SuppressLint("RestrictedApi")
@@ -52,19 +52,19 @@ public class EditarActivity extends AppCompatActivity {
         }
 
         final DbPlantas dbPlantas = new DbPlantas(EditarActivity.this);
-        contacto = dbPlantas.verContacto(id);
+        planta = dbPlantas.verPlanta(id);
 
-        if (contacto != null) {
-            txtNombre.setText(contacto.getNombre());
-            txtTelefono.setText(contacto.getTelefono());
-            txtCorreo.setText(contacto.getCorreo_electornico());
+        if (planta != null) {
+            txtNombre.setText(planta.getNombre());
+            txtTelefono.setText(planta.getTelefono());
+            txtCorreo.setText(planta.getCorreo_electornico());
         }
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
-                    correcto = dbPlantas.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
+                    correcto = dbPlantas.editarPlanta(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
 
                     if(correcto){
                         Toast.makeText(EditarActivity.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();

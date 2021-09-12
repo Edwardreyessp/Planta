@@ -19,10 +19,10 @@ import escom.planta.R;
 
 public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapter.PlantaViewHolder> {
 
-    ArrayList<Plantas> listaContactos;
+    ArrayList<Plantas> listaPlantas;
 
-    public ListaPlantasAdapter(ArrayList<Plantas> listaContactos){
-        this.listaContactos = listaContactos;
+    public ListaPlantasAdapter(ArrayList<Plantas> listaPlantas){
+        this.listaPlantas = listaPlantas;
     }
 
     @NonNull
@@ -34,14 +34,14 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
 
     @Override
     public void onBindViewHolder(@NonNull PlantaViewHolder holder, int position) {
-        holder.viewNombre.setText(listaContactos.get(position).getNombre());
-        holder.viewTelefono.setText(listaContactos.get(position).getTelefono());
-        holder.viewCorreo.setText(listaContactos.get(position).getCorreo_electornico());
+        holder.viewNombre.setText(listaPlantas.get(position).getNombre());
+        holder.viewTelefono.setText(listaPlantas.get(position).getTelefono());
+        holder.viewCorreo.setText(listaPlantas.get(position).getCorreo_electornico());
     }
 
     @Override
     public int getItemCount() {
-        return listaContactos.size();
+        return listaPlantas.size();
     }
 
     public class PlantaViewHolder extends RecyclerView.ViewHolder {
@@ -60,7 +60,7 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
                 public void onClick(View view) {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, VerActivity.class);
-                    intent.putExtra("ID", listaContactos.get(getAdapterPosition()).getId());
+                    intent.putExtra("ID", listaPlantas.get(getAdapterPosition()).getId());
                     context.startActivity(intent);
                 }
             });

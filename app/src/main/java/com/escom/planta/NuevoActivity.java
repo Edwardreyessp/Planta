@@ -34,7 +34,7 @@ public class NuevoActivity extends AppCompatActivity {
                 if(!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
 
                     DbPlantas dbPlantas = new DbPlantas(NuevoActivity.this);
-                    long id = dbPlantas.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
+                    long id = dbPlantas.insertarPlanta(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
 
                     if (id > 0) {
                         Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();

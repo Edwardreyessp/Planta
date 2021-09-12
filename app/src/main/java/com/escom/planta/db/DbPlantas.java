@@ -20,7 +20,7 @@ public class DbPlantas extends DbHelper {
         this.context = context;
     }
 
-    public long insertarContacto(String nombre, String telefono, String correo_electronico) {
+    public long insertarPlanta(String nombre, String telefono, String correo_electronico) {
 
         long id = 0;
 
@@ -33,7 +33,7 @@ public class DbPlantas extends DbHelper {
             values.put("telefono", telefono);
             values.put("correo_electronico", correo_electronico);
 
-            id = db.insert(TABLE_CONTACTOS, null, values);
+            id = db.insert(TABLE_PLANTAS, null, values);
         } catch (Exception ex) {
             ex.toString();
         }
@@ -41,57 +41,57 @@ public class DbPlantas extends DbHelper {
         return id;
     }
 
-    public ArrayList<Plantas> mostrarContactos() {
+    public ArrayList<Plantas> mostrarPlantas() {
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        ArrayList<Plantas> listaContactos = new ArrayList<>();
-        Plantas contacto;
-        Cursor cursorContactos;
+        ArrayList<Plantas> listaPlantas = new ArrayList<>();
+        Plantas planta;
+        Cursor cursorPlantas;
 
-        cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS, null);
+        cursorPlantas = db.rawQuery("SELECT * FROM " + TABLE_PLANTAS, null);
 
-        if (cursorContactos.moveToFirst()) {
+        if (cursorPlantas.moveToFirst()) {
             do {
-                contacto = new Plantas();
-                contacto.setId(cursorContactos.getInt(0));
-                contacto.setNombre(cursorContactos.getString(1));
-                contacto.setTelefono(cursorContactos.getString(2));
-                contacto.setCorreo_electornico(cursorContactos.getString(3));
-                listaContactos.add(contacto);
-            } while (cursorContactos.moveToNext());
+                planta = new Plantas();
+                planta.setId(cursorPlantas.getInt(0));
+                planta.setNombre(cursorPlantas.getString(1));
+                planta.setTelefono(cursorPlantas.getString(2));
+                planta.setCorreo_electornico(cursorPlantas.getString(3));
+                listaPlantas.add(planta);
+            } while (cursorPlantas.moveToNext());
         }
 
-        cursorContactos.close();
+        cursorPlantas.close();
 
-        return listaContactos;
+        return listaPlantas;
     }
 
-    public Plantas verContacto(int id) {
+    public Plantas verPlanta(int id) {
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        Plantas contacto = null;
-        Cursor cursorContactos;
+        Plantas planta = null;
+        Cursor cursorPlantas;
 
-        cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS + " WHERE id = " + id + " LIMIT 1", null);
+        cursorPlantas = db.rawQuery("SELECT * FROM " + TABLE_PLANTAS + " WHERE id = " + id + " LIMIT 1", null);
 
-        if (cursorContactos.moveToFirst()) {
-            contacto = new Plantas();
-            contacto.setId(cursorContactos.getInt(0));
-            contacto.setNombre(cursorContactos.getString(1));
-            contacto.setTelefono(cursorContactos.getString(2));
-            contacto.setCorreo_electornico(cursorContactos.getString(3));
+        if (cursorPlantas.moveToFirst()) {
+            planta = new Plantas();
+            planta.setId(cursorPlantas.getInt(0));
+            planta.setNombre(cursorPlantas.getString(1));
+            planta.setTelefono(cursorPlantas.getString(2));
+            planta.setCorreo_electornico(cursorPlantas.getString(3));
         }
 
-        cursorContactos.close();
+        cursorPlantas.close();
 
-        return contacto;
+        return planta;
     }
 
-    public boolean editarContacto(int id, String nombre, String telefono, String correo_electronico) {
+    public boolean editarPlanta(int id, String nombre, String telefono, String correo_electronico) {
 
         boolean correcto = false;
 
@@ -99,7 +99,7 @@ public class DbPlantas extends DbHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + TABLE_CONTACTOS + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
+            db.execSQL("UPDATE " + TABLE_PLANTAS + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
@@ -111,7 +111,7 @@ public class DbPlantas extends DbHelper {
         return correcto;
     }
 
-    public boolean eliminarContacto(int id) {
+    public boolean eliminarPlanta(int id) {
 
         boolean correcto = false;
 
@@ -119,7 +119,7 @@ public class DbPlantas extends DbHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("DELETE FROM " + TABLE_CONTACTOS + " WHERE id = '" + id + "'");
+            db.execSQL("DELETE FROM " + TABLE_PLANTAS + " WHERE id = '" + id + "'");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

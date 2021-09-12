@@ -23,7 +23,7 @@ public class VerActivity extends AppCompatActivity {
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
 
-    Plantas contacto;
+    Plantas planta;
     int id = 0;
 
     @Override
@@ -50,12 +50,12 @@ public class VerActivity extends AppCompatActivity {
         }
 
         final DbPlantas dbPlantas = new DbPlantas(VerActivity.this);
-        contacto = dbPlantas.verContacto(id);
+        planta = dbPlantas.verPlanta(id);
 
-        if(contacto != null){
-            txtNombre.setText(contacto.getNombre());
-            txtTelefono.setText(contacto.getTelefono());
-            txtCorreo.setText(contacto.getCorreo_electornico());
+        if(planta != null){
+            txtNombre.setText(planta.getNombre());
+            txtTelefono.setText(planta.getTelefono());
+            txtCorreo.setText(planta.getCorreo_electornico());
             btnGuarda.setVisibility(View.INVISIBLE);
             txtNombre.setInputType(InputType.TYPE_NULL);
             txtTelefono.setInputType(InputType.TYPE_NULL);
@@ -75,12 +75,12 @@ public class VerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(VerActivity.this);
-                builder.setMessage("¿Desea eliminar este contacto?")
+                builder.setMessage("¿Desea eliminar esta planta?")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if(dbPlantas.eliminarContacto(id)){
+                                if(dbPlantas.eliminarPlanta(id)){
                                     lista();
                                 }
                             }

@@ -20,22 +20,22 @@ import escom.planta.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView listaContactos;
-    ArrayList<Plantas> listaArrayContactos;
+    RecyclerView listaPlantas;
+    ArrayList<Plantas> listaArrayPlantas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listaContactos = findViewById(R.id.listaContactos);
-        listaContactos.setLayoutManager(new LinearLayoutManager(this));
+        listaPlantas = findViewById(R.id.listaContactos);
+        listaPlantas.setLayoutManager(new LinearLayoutManager(this));
 
         DbPlantas dbPlantas = new DbPlantas(MainActivity.this);
 
-        listaArrayContactos = new ArrayList<>();
+        listaArrayPlantas = new ArrayList<>();
 
-        ListaPlantasAdapter adapter = new ListaPlantasAdapter(dbPlantas.mostrarContactos());
-        listaContactos.setAdapter(adapter);
+        ListaPlantasAdapter adapter = new ListaPlantasAdapter(dbPlantas.mostrarPlantas());
+        listaPlantas.setAdapter(adapter);
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
