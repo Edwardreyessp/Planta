@@ -20,7 +20,7 @@ public class DbPlantas extends DbHelper {
         this.context = context;
     }
 
-    public long insertarPlanta(String nombre, String telefono, String correo_electronico) {
+    public long insertarPlanta(String nombre, String dias_riego, String tamano) {
 
         long id = 0;
 
@@ -30,8 +30,8 @@ public class DbPlantas extends DbHelper {
 
             ContentValues values = new ContentValues();
             values.put("nombre", nombre);
-            values.put("telefono", telefono);
-            values.put("correo_electronico", correo_electronico);
+            values.put("dias_riego", dias_riego);
+            values.put("tamano", tamano);
 
             id = db.insert(TABLE_PLANTAS, null, values);
         } catch (Exception ex) {
@@ -57,8 +57,8 @@ public class DbPlantas extends DbHelper {
                 planta = new Plantas();
                 planta.setId(cursorPlantas.getInt(0));
                 planta.setNombre(cursorPlantas.getString(1));
-                planta.setTelefono(cursorPlantas.getString(2));
-                planta.setCorreo_electornico(cursorPlantas.getString(3));
+                planta.setDias_riego(cursorPlantas.getString(2));
+                planta.setTamano(cursorPlantas.getString(3));
                 listaPlantas.add(planta);
             } while (cursorPlantas.moveToNext());
         }
@@ -82,8 +82,8 @@ public class DbPlantas extends DbHelper {
             planta = new Plantas();
             planta.setId(cursorPlantas.getInt(0));
             planta.setNombre(cursorPlantas.getString(1));
-            planta.setTelefono(cursorPlantas.getString(2));
-            planta.setCorreo_electornico(cursorPlantas.getString(3));
+            planta.setDias_riego(cursorPlantas.getString(2));
+            planta.setTamano(cursorPlantas.getString(3));
         }
 
         cursorPlantas.close();
@@ -91,7 +91,7 @@ public class DbPlantas extends DbHelper {
         return planta;
     }
 
-    public boolean editarPlanta(int id, String nombre, String telefono, String correo_electronico) {
+    public boolean editarPlanta(int id, String nombre, String dias_riego, String tamano) {
 
         boolean correcto = false;
 
@@ -99,7 +99,7 @@ public class DbPlantas extends DbHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + TABLE_PLANTAS + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
+            db.execSQL("UPDATE " + TABLE_PLANTAS + " SET nombre = '" + nombre + "', dias_riego = '" + dias_riego + "', tamano = '" + tamano + "' WHERE id='" + id + "' ");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

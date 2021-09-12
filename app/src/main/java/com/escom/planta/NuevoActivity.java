@@ -14,7 +14,7 @@ import escom.planta.R;
 
 public class NuevoActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreoElectronico;
+    EditText txtNombre, txtDiasRiego, txtTamano;
     Button btnGuarda;
 
     @Override
@@ -23,18 +23,18 @@ public class NuevoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nuevo);
 
         txtNombre = findViewById(R.id.txtNombre);
-        txtTelefono = findViewById(R.id.txtTelefono);
-        txtCorreoElectronico = findViewById(R.id.txtCorreoElectronico);
+        txtDiasRiego = findViewById(R.id.txtDiasRiego);
+        txtTamano = findViewById(R.id.txtTamano);
         btnGuarda = findViewById(R.id.btnGuarda);
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
+                if(!txtNombre.getText().toString().equals("") && !txtDiasRiego.getText().toString().equals("")) {
 
                     DbPlantas dbPlantas = new DbPlantas(NuevoActivity.this);
-                    long id = dbPlantas.insertarPlanta(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
+                    long id = dbPlantas.insertarPlanta(txtNombre.getText().toString(), txtDiasRiego.getText().toString(), txtTamano.getText().toString());
 
                     if (id > 0) {
                         Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
@@ -51,7 +51,7 @@ public class NuevoActivity extends AppCompatActivity {
 
     private void limpiar() {
         txtNombre.setText("");
-        txtTelefono.setText("");
-        txtCorreoElectronico.setText("");
+        txtDiasRiego.setText("");
+        txtTamano.setText("");
     }
 }

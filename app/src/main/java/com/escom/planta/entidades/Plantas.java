@@ -4,8 +4,8 @@ public class Plantas {
 
     private int id;
     private String nombre;
-    private String telefono;
-    private String correo_electornico;
+    private String dias_riego;
+    private String tamano;
 
     public int getId() {
         return id;
@@ -23,19 +23,19 @@ public class Plantas {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getDias_riego() {
+        return dias_riego;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setDias_riego(String dias_riego) {
+        this.dias_riego = dias_riego;
     }
 
-    public String getCorreo_electornico() {
-        return correo_electornico;
+    public String getTamano() {
+        return tamano;
     }
 
-    public void setCorreo_electornico(String correo_electornico) {
-        this.correo_electornico = correo_electornico;
+    public void setTamano(String tamano) {
+        this.tamano = tamano;
     }
 }

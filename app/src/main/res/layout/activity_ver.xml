@@ -23,13 +23,13 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/viewTelefono"
+        android:id="@+id/viewRiego"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hint_dias_riego" />
 
     <EditText
-        android:id="@+id/txtTelefono"
+        android:id="@+id/txtDiasRiego"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,13 +38,13 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/viewCorreo"
+        android:id="@+id/viewTamano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hint_tamano" />
 
     <EditText
-        android:id="@+id/txtCorreoElectronico"
+        android:id="@+id/txtTamano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

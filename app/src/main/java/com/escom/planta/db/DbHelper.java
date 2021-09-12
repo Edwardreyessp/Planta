@@ -22,8 +22,8 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PLANTAS + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
-                "telefono TEXT NOT NULL," +
-                "correo_electronico TEXT)");
+                "dias_riego TEXT NOT NULL," +
+                "tamano TEXT)");
     }
 
     @Override

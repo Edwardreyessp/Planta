@@ -18,7 +18,7 @@ import escom.planta.R;
 
 public class EditarActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreo;
+    EditText txtNombre, txtRiego, txtTamano;
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
     boolean correcto = false;
@@ -32,8 +32,8 @@ public class EditarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver);
 
         txtNombre = findViewById(R.id.txtNombre);
-        txtTelefono = findViewById(R.id.txtTelefono);
-        txtCorreo = findViewById(R.id.txtCorreoElectronico);
+        txtRiego = findViewById(R.id.txtDiasRiego);
+        txtTamano = findViewById(R.id.txtTamano);
         btnGuarda = findViewById(R.id.btnGuarda);
         fabEditar = findViewById(R.id.fabEditar);
         fabEditar.setVisibility(View.INVISIBLE);
@@ -56,15 +56,15 @@ public class EditarActivity extends AppCompatActivity {
 
         if (planta != null) {
             txtNombre.setText(planta.getNombre());
-            txtTelefono.setText(planta.getTelefono());
-            txtCorreo.setText(planta.getCorreo_electornico());
+            txtRiego.setText(planta.getDias_riego());
+            txtTamano.setText(planta.getTamano());
         }
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
-                    correcto = dbPlantas.editarPlanta(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
+                if (!txtNombre.getText().toString().equals("") && !txtRiego.getText().toString().equals("")) {
+                    correcto = dbPlantas.editarPlanta(id, txtNombre.getText().toString(), txtRiego.getText().toString(), txtTamano.getText().toString());
 
                     if(correcto){
                         Toast.makeText(EditarActivity.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();

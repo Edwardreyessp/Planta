@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listaPlantas = findViewById(R.id.listaContactos);
+        listaPlantas = findViewById(R.id.listaPlantas);
         listaPlantas.setLayoutManager(new LinearLayoutManager(this));
 
         DbPlantas dbPlantas = new DbPlantas(MainActivity.this);

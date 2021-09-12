@@ -35,8 +35,8 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
     @Override
     public void onBindViewHolder(@NonNull PlantaViewHolder holder, int position) {
         holder.viewNombre.setText(listaPlantas.get(position).getNombre());
-        holder.viewTelefono.setText(listaPlantas.get(position).getTelefono());
-        holder.viewCorreo.setText(listaPlantas.get(position).getCorreo_electornico());
+        holder.viewRiego.setText(listaPlantas.get(position).getDias_riego());
+        holder.viewTamano.setText(listaPlantas.get(position).getTamano());
     }
 
     @Override
@@ -46,14 +46,14 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
 
     public class PlantaViewHolder extends RecyclerView.ViewHolder {
 
-        TextView viewNombre, viewTelefono, viewCorreo;
+        TextView viewNombre, viewRiego, viewTamano;
 
         public PlantaViewHolder(@NonNull View itemView) {
             super(itemView);
 
             viewNombre = itemView.findViewById(R.id.viewNombre);
-            viewTelefono = itemView.findViewById(R.id.viewTelefono);
-            viewCorreo = itemView.findViewById(R.id.viewCorreo);
+            viewRiego = itemView.findViewById(R.id.viewRiego);
+            viewTamano = itemView.findViewById(R.id.viewTamano);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

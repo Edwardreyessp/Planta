@@ -19,7 +19,7 @@ import escom.planta.R;
 
 public class VerActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreo;
+    EditText txtNombre, txtRiego, txtTamano;
     Button btnGuarda;
     FloatingActionButton fabEditar, fabEliminar;
 
@@ -32,8 +32,8 @@ public class VerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver);
 
         txtNombre = findViewById(R.id.txtNombre);
-        txtTelefono = findViewById(R.id.txtTelefono);
-        txtCorreo = findViewById(R.id.txtCorreoElectronico);
+        txtRiego = findViewById(R.id.txtDiasRiego);
+        txtTamano = findViewById(R.id.txtTamano);
         btnGuarda = findViewById(R.id.btnGuarda);
         fabEditar = findViewById(R.id.fabEditar);
         fabEliminar = findViewById(R.id.fabEliminar);
@@ -54,12 +54,12 @@ public class VerActivity extends AppCompatActivity {
 
         if(planta != null){
             txtNombre.setText(planta.getNombre());
-            txtTelefono.setText(planta.getTelefono());
-            txtCorreo.setText(planta.getCorreo_electornico());
+            txtRiego.setText(planta.getDias_riego());
+            txtTamano.setText(planta.getTamano());
             btnGuarda.setVisibility(View.INVISIBLE);
             txtNombre.setInputType(InputType.TYPE_NULL);
-            txtTelefono.setInputType(InputType.TYPE_NULL);
-            txtCorreo.setInputType(InputType.TYPE_NULL);
+            txtRiego.setInputType(InputType.TYPE_NULL);
+            txtTamano.setInputType(InputType.TYPE_NULL);
         }
 
         fabEditar.setOnClickListener(new View.OnClickListener() {
